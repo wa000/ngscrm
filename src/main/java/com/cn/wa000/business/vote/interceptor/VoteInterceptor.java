@@ -44,7 +44,7 @@ public class VoteInterceptor implements HandlerInterceptor
         {
             String selectId = ((VoteDomain) obj).getSelectId();
             
-            if(CommonUtils.isNotEmpty(selectId))
+            if(CommonUtils.isNotEmpty(selectId)) 
             {
                 voteid = selectId.split("@_@")[0];
             }
