@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.cn.wa000.business.vote.dao.VoteBeanMapper">
+    <!-- add begin by wa000 2015-8-16 测试用 -->
+	<select id="selectVoteBean" resultType="com.cn.wa000.business.vote.bean.VoteBean">
+	  select * from t_vot_voteshow where voteid = #{id}
+	</select>
+  
+	<update id="updateVote" parameterType="com.cn.wa000.business.vote.bean.VoteBean">
+	  update t_vot_voteshow set
+	    title = #{title}
+	  where voteid = #{id}
+	</update>
+    <!-- add end   by wa000 2015-8-16 测试用 -->
+    
+    
+    
+</mapper>
