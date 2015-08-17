@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.cn.wa000.business.login.dao.LoginBeanMapper">
+	<select id="queryOneLoginBean" resultType="com.cn.wa000.business.login.bean.LoginBean">
+	  select * from T_UCP_USERINFO where staffid = #{staffid}
+	</select>
+</mapper>

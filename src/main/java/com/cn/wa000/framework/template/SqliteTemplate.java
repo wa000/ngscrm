@@ -28,7 +28,7 @@ public class SqliteTemplate
      * 
      * @param selectId 配置文件中的id
      * @param object 作为入参的javaBean
-     * @return 查询到的数据,如果没有查询到返回null
+     * @return 查询到的数据(如果没有查询到返回null)
      */
     public Object findOne(String selectId, Object object)
     {

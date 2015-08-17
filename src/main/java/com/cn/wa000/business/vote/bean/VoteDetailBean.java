@@ -1,16 +1,40 @@
 package com.cn.wa000.business.vote.bean;
 
+/**
+ * 投票详细信息的bean对象
+ * 
+ * @author wa000
+ *
+ */
 public class VoteDetailBean
 {
+    // ................................................................. 私有属性
+    /**
+     * 投票id
+     */
     private String voteId;
     
+    /**
+     * 投票项id
+     */
     private String itemId;
     
+    /**
+     * 投票项内容
+     */
     private String content;
     
+    /**
+     * 票数
+     */
     private String count;
     
+    /**
+     * 投票类型
+     */
+    private String type;
 
+    // ................................................................... 构造器
     public String getVoteId()
     {
         return voteId;
@@ -49,5 +73,34 @@ public class VoteDetailBean
     public void setItemId(String itemId)
     {
         this.itemId = itemId;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
+    // ................................................................. 覆盖方法
+    @Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("VoteDetailBean [voteId=");
+        builder.append(voteId);
+        builder.append(", itemId=");
+        builder.append(itemId);
+        builder.append(", content=");
+        builder.append(content);
+        builder.append(", count=");
+        builder.append(count);
+        builder.append(", type=");
+        builder.append(type);
+        builder.append("]");
+        return builder.toString();
     }
 }

@@ -24,6 +24,9 @@ public class BlogMainAction
     @RequestMapping(value = "/showHomePage", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public ModelAndView showBlogHomePage(ModelAndView model)
     {
+        
+        
+        
         model.setViewName("blog/blogHomePage");
         
         return model;

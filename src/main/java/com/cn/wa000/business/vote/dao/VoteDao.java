@@ -213,6 +213,8 @@ public class VoteDao
                 
                 bean.setCount(executeQuery.getString("COUNT"));
                 
+                bean.setType(executeQuery.getString("TYPE"));
+                
                 voteDetailList.add(bean);
             }
         }

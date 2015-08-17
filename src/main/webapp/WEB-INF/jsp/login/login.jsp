@@ -1,4 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>  
 <%@ page isELIgnored="false"%> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,14 +16,14 @@
 </head>
 <body>
 <div id="home">
-    <form id="login" class="current1" method="post">
+	<form:form id="login" class="current1" modelAttribute="domain" method="post" action="${pageContext.request.contextPath}/welcome/login/checkinfo" >
         <h3>用户登入</h3>
         <img class="avator" src="${pageContext.request.contextPath}/theme/img/login/saber.png" width="96" height="96"/>
-        <label>邮箱/名称<input type="text" name="userName" style="width:215px;" /><span>邮箱为空</span></label>
-        <label>密码<input type="password" name="pass"  /><span>密码为空</span></label>
-        <button type="button">管理员登入</button>
+        <label>邮箱/名称<input type="text" name="staffId" style="width:215px;" /><span>邮箱为空</span></label>
+        <label>密码<input type="password" name="password"  /><span>密码为空</span></label>
+        <button type="submit">管理员登入</button>
         <button type="button" onclick="showVoteList()">投票</button>
-    </form> 
+    </form:form>
 </div>
 </body>
 </html>

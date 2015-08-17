@@ -18,6 +18,12 @@ import com.cn.wa000.business.vote.bean.VoteDetailBean;
 import com.cn.wa000.business.vote.dao.VoteDao;
 import com.cn.wa000.business.vote.domain.VoteDomain;
 
+/**
+ * 测试jdbc时的action类
+ * 
+ * @author wa000
+ *
+ */
 @Controller
 @RequestMapping("/vote")
 public class VoteAction
@@ -42,6 +48,7 @@ public class VoteAction
     @RequestMapping(value = "/showlist", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public String showVoteList(ModelMap modelMap)
     {
+        @SuppressWarnings("deprecation")
         List<VoteBean> queryVoteList = voteDao.queryVoteList();
         
         modelMap.addAttribute("voteList", queryVoteList);
@@ -54,6 +61,7 @@ public class VoteAction
     @RequestMapping(value="/showlist/showvotedetail", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public String showVoteDetail(ModelMap modelMap)
     {
+        @SuppressWarnings("deprecation")
         List<VoteDetailBean> list = voteDao.queryVoteDetailByVoteId(request.getParameter("voteid"));
         
         VoteDomain domain = new VoteDomain();
@@ -65,6 +73,7 @@ public class VoteAction
         return "vote/votedetail";
     }
     
+    @SuppressWarnings("deprecation")
     @RequestMapping(value="/showlist/showvoteresult", method = RequestMethod.POST)
     public String showVoteResult(ModelMap modelMap, VoteDomain domain)
     {
@@ -105,6 +114,7 @@ public class VoteAction
     {
         VoteDomain domain = new VoteDomain();
         
+        @SuppressWarnings("deprecation")
         List<VoteDetailBean> list = voteDao.queryVoteDetailByVoteId(request.getParameter("voteid"));
         
         
