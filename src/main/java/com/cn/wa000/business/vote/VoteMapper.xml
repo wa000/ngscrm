@@ -4,18 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.cn.wa000.business.vote.dao.VoteBeanMapper">
-    <!-- add begin by wa000 2015-8-16 测试用 -->
-	<select id="selectVoteBean" resultType="com.cn.wa000.business.vote.bean.VoteBean">
-	  select * from t_vot_voteshow where voteid = #{id}
+    
+    <!-- 查询所有的投票列表 -->
+    <select id="queryAllVoteList" resultType="com.cn.wa000.business.vote.bean.VoteMainBean">
+	  select * from t_vot_voteshow
 	</select>
-  
-	<update id="updateVote" parameterType="com.cn.wa000.business.vote.bean.VoteBean">
-	  update t_vot_voteshow set
-	    title = #{title}
-	  where voteid = #{id}
-	</update>
-    <!-- add end   by wa000 2015-8-16 测试用 -->
     
-    
+    <!-- 增加一项投票 -->
+    <insert id="addvote">
+    	insert into t_vot_voteshow (title, createtime) values (#{title} , #{createtime})
+    </insert>
     
 </mapper>

@@ -48,11 +48,11 @@ public class SqliteTemplate
      * @param object 作为入参的javaBean
      * @return
      */
-    public List<Object> findList(String selectId, Object object)
+    public <E> List<E> findList(String selectId, Object object)
     {
         SqlSession session = factory.openSession();
         
-        List<Object> selectList = session.selectList(selectId, object);
+        List<E> selectList = session.selectList(selectId, object);
         
         session.close();
         

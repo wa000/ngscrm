@@ -25,8 +25,6 @@ public class BlogMainAction
     public ModelAndView showBlogHomePage(ModelAndView model)
     {
         
-        
-        
         model.setViewName("blog/blogHomePage");
         
         return model;

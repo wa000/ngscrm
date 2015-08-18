@@ -1,29 +1,30 @@
 package com.cn.wa000.business.vote.bean;
 
 /**
- * 调整为myBatis时, 使用的投票的javaBean对象
+ * 投票的model类
  * 
  * @author wa000
  *
  */
-public class VoteMyBtsBean
+public class VoteMainBean
 {
+    // ................................................................. 私有属性
     /**
      * 投票id
      */
     private String voteId;
     
     /**
-     * 投票题目
+     * 投票标题
      */
     private String title;
     
     /**
      * 创建时间
      */
-    private String createTime;
+    private String createtime;
 
-    
+    // ............................................................... 构造器方法
     public String getVoteId()
     {
         return voteId;
@@ -44,26 +45,27 @@ public class VoteMyBtsBean
         this.title = title;
     }
 
-    public String getCreateTime()
+    public String getCreatetime()
     {
-        return createTime;
+        return createtime;
     }
 
-    public void setCreateTime(String createTime)
+    public void setCreatetime(String createtime)
     {
-        this.createTime = createTime;
+        this.createtime = createtime;
     }
 
+    // ................................................................. 覆盖方法
     @Override
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("VoteMyBtsBean [voteId=");
+        builder.append("VoteMainBean [voteId=");
         builder.append(voteId);
         builder.append(", title=");
         builder.append(title);
-        builder.append(", createTime=");
-        builder.append(createTime);
+        builder.append(", createtime=");
+        builder.append(createtime);
         builder.append("]");
         return builder.toString();
     }

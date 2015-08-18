@@ -94,11 +94,17 @@ public class CommonUtils
         return "";      
     } 
     
+    /**
+     * 判断字符串是否为非空
+     * 
+     * @param str
+     * @return
+     */
     public static boolean isNotEmpty(String str)
     {
         boolean result = false;
         
-        if(null != str && 0 != str.length())
+        if(null != str && 0 != str.trim().length())
         {
             result = true;
         }
@@ -106,6 +112,12 @@ public class CommonUtils
         return result;
     }
     
+    /**
+     * 判断字符串是否为空
+     * 
+     * @param str
+     * @return
+     */
     public static boolean isEmpty(String str)
     {
         boolean result = false;
@@ -116,7 +128,7 @@ public class CommonUtils
         }
         else
         {
-            if(0 == str.length())
+            if(0 == str.trim().length())
             {
                 result = true;
             }

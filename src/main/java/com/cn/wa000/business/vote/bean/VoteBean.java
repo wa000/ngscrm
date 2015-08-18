@@ -1,5 +1,11 @@
 package com.cn.wa000.business.vote.bean;
 
+/**
+ * 测试jdbc用
+ * 
+ * @author wa000
+ *
+ */
 public class VoteBean
 {
     private String id;

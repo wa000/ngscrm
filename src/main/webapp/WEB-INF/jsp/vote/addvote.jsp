@@ -8,42 +8,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>投票管理页面</title>
+	<title>增加投票</title>
 	<script src="${pageContext.request.contextPath}/theme/js/jquery-1.10.2.js" type="text/javascript"></script>
 </head>
-
 <body>
-	<table border="1">
-		<thead>
+	<form:form modelAttribute="domain" action="${pageContext.request.contextPath}/vote/doaddvote" >
+		<table>
 			<tr>
-				<td>投票id</td>
 				<td>标题</td>
-				<td>操作</td>
+				<td><input name="addTitle" /></td>
 			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${domain.voteList }" var="item">
-			<tr>
-				<td>
-					${item.voteId }
-				</td>
-				<td>
-					${item.title }
-				</td>
-				<td>
-					<a href="" >编辑</a>
-					<a href="" >删除</a>
-				</td>
-			</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	<button onclick="addVote()" >新增投票</button>
+		</table>
+		<input type="submit" value="确定" />
+	</form:form>
 </body>
-<script type="text/javascript">
-function addVote()
-{
-	window.location = ("${pageContext.request.contextPath}/vote/addvote");
-}
-</script>
 </html>
