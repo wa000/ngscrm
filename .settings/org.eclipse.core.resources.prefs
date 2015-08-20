@@ -4,6 +4,7 @@ encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/hello.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/login/login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/login/loginerror.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vote/editvotedetail.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/vote/voteManager.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/vote/votelist.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/theme/css/login.css=UTF-8

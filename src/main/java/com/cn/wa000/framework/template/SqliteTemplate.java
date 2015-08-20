@@ -34,9 +34,20 @@ public class SqliteTemplate
     {
         SqlSession session = factory.openSession();
         
-        Object oneBean = session.selectOne(selectId, object);
+        Object oneBean = null;
         
-        session.close();
+        try
+        {
+            oneBean = session.selectOne(selectId, object);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            session.close();
+        }
         
         return oneBean;
     }
@@ -52,9 +63,20 @@ public class SqliteTemplate
     {
         SqlSession session = factory.openSession();
         
-        List<E> selectList = session.selectList(selectId, object);
+        List<E> selectList = null;
         
-        session.close();
+        try
+        {
+            selectList = session.selectList(selectId, object);
+        } 
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            session.close();
+        }
         
         return selectList;
     }
@@ -71,9 +93,20 @@ public class SqliteTemplate
         // 提供自动commit功能
         SqlSession session = factory.openSession(true);
         
-        int updateNum = session.update(updateId, object);
+        int updateNum = 0;
         
-        session.close();
+        try
+        {
+            updateNum = session.update(updateId, object);
+        } 
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            session.close();
+        }
         
         return updateNum;
     }
@@ -90,9 +123,20 @@ public class SqliteTemplate
         // 提供自动commit功能
         SqlSession session = factory.openSession(true);
         
-        int insertNum = session.insert(insertId, object);
+        int insertNum = 0;
         
-        session.close();
+        try
+        {
+            insertNum = session.insert(insertId, object);
+        } 
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            session.close();
+        }
         
         return insertNum;
     }
@@ -109,9 +153,20 @@ public class SqliteTemplate
         // 提供自动commit功能
         SqlSession session = factory.openSession(true);
         
-        int deleteNum = session.delete(deleteId, object);
+        int deleteNum = 0;
         
-        session.close();
+        try
+        {
+            deleteNum = session.delete(deleteId, object);
+        } 
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            session.close();
+        }
         
         return deleteNum;
     }

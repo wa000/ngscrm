@@ -17,6 +17,7 @@ import com.cn.wa000.business.login.dao.LoginDao;
 import com.cn.wa000.business.login.domain.LoginMainDomain;
 import com.cn.wa000.business.vote.bean.VoteBean;
 import com.cn.wa000.business.vote.dao.VoteDao;
+import com.cn.wa000.framework.base.BaseAction;
 import com.cn.wa000.framework.common.SqliteJDBC;
 import com.cn.wa000.framework.util.CommonUtils;
 import com.cn.wa000.framework.util.SpringUtil;
@@ -30,7 +31,7 @@ import com.cn.wa000.framework.util.SqliteUtils;
  */
 @Controller
 @RequestMapping("/welcome")
-public class LoginAction
+public class LoginAction extends BaseAction
 {
     // ................................................................. 静态字段
     /**

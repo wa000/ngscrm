@@ -31,8 +31,8 @@
 					${item.title }
 				</td>
 				<td>
-					<a href="" >编辑</a>
-					<a href="" >删除</a>
+					<a href="${pageContext.request.contextPath}/vote/showvotedetailedit?voteId=${item.voteId }" >编辑</a>
+					<a href="${pageContext.request.contextPath}/vote/deleteVote?voteid=${item.voteId }" >删除</a>
 				</td>
 			</tr>
 			</c:forEach>
@@ -43,7 +43,7 @@
 <script type="text/javascript">
 function addVote()
 {
-	window.location = ("${pageContext.request.contextPath}/vote/addvote");
+	window.location = "${pageContext.request.contextPath}/vote/addvote";
 }
 </script>
 </html>

@@ -34,6 +34,11 @@ public class VoteDetailBean
      */
     private String type;
 
+    /**
+     * 类型名称
+     */
+    private String typeName;
+    
     // ................................................................... 构造器
     public String getVoteId()
     {
@@ -85,6 +90,25 @@ public class VoteDetailBean
         this.type = type;
     }
 
+    public String getTypeName()
+    {
+        if("1".equals(type))
+        {
+            return "单选框";
+        }
+        if("2".equals(type))
+        {
+            return "文本框";
+        }
+        
+        return "";
+    }
+
+    public void setTypeName(String typeName)
+    {
+        this.typeName = typeName;
+    }
+
     // ................................................................. 覆盖方法
     @Override
     public String toString()
@@ -100,7 +124,10 @@ public class VoteDetailBean
         builder.append(count);
         builder.append(", type=");
         builder.append(type);
+        builder.append(", typeName=");
+        builder.append(typeName);
         builder.append("]");
         return builder.toString();
     }
+    
 }

@@ -21,6 +21,11 @@ public class VoteDomain
     private List<VoteDetailBean> voteDetailList = new ArrayList<VoteDetailBean>();
 
     /**
+     * 投票类型为文本框的投票项
+     */
+    private VoteDetailBean detailTypeBean;
+    
+    /**
      * 选择的id
      */
     private String selectId;
@@ -39,6 +44,21 @@ public class VoteDomain
      * 增加投票时的标题
      */
     private String addTitle;
+    
+    /**
+     * 投票id
+     */
+    private String voteId;
+    
+    /**
+     * 投票项内容
+     */
+    private String content;
+    
+    /**
+     * 类型
+     */
+    private String type;
     
     // ............................................................... 构造器方法
     public List<VoteDetailBean> getVoteDetailList()
@@ -91,6 +111,46 @@ public class VoteDomain
         this.addTitle = addTitle;
     }
     
+    public String getVoteId()
+    {
+        return voteId;
+    }
+
+    public void setVoteId(String voteId)
+    {
+        this.voteId = voteId;
+    }
+
+    public String getContent()
+    {
+        return content;
+    }
+
+    public void setContent(String content)
+    {
+        this.content = content;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+    
+    public VoteDetailBean getDetailTypeBean()
+    {
+        return detailTypeBean;
+    }
+
+    public void setDetailTypeBean(VoteDetailBean detailTypeBean)
+    {
+        this.detailTypeBean = detailTypeBean;
+    }
+    
     // ................................................................. 覆盖方法
     @Override
     public String toString()
@@ -104,7 +164,13 @@ public class VoteDomain
         builder.append(jsonResult);
         builder.append(", voteList=");
         builder.append(voteList);
+        builder.append(", addTitle=");
+        builder.append(addTitle);
+        builder.append(", voteId=");
+        builder.append(voteId);
         builder.append("]");
         return builder.toString();
     }
+
+    
 }

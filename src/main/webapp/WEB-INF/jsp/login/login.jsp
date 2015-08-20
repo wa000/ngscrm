@@ -116,6 +116,6 @@ $(function(){
 
 function showVoteList()
 {
-	window.location = "${pageContext.request.contextPath}/vote/showlist";
+	window.location = "${pageContext.request.contextPath}/showvote/showvotepage";
 }
 </script>

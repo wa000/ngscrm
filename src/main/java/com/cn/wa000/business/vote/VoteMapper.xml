@@ -7,12 +7,63 @@
     
     <!-- 查询所有的投票列表 -->
     <select id="queryAllVoteList" resultType="com.cn.wa000.business.vote.bean.VoteMainBean">
-	  select * from t_vot_voteshow
+		select * from t_vot_voteshow
 	</select>
     
     <!-- 增加一项投票 -->
     <insert id="addvote">
     	insert into t_vot_voteshow (title, createtime) values (#{title} , #{createtime})
     </insert>
+    
+    <!-- 根据voteid查询出投票项 -->
+    <select id="queryVoteDetailList" resultType="com.cn.wa000.business.vote.bean.VoteDetailBean">
+    	select * from t_vot_votedetail where voteid = #{voteid}
+    </select>
+    
+    <!-- 增加一项投票项 -->
+    <insert id="addvotedetail">
+    	insert into 
+    		t_vot_votedetail
+    		(
+	    		voteid,
+	    		itemid,
+	    		content,
+	    		count,
+	    		type
+    		)
+    		values 
+    		(
+	    		#{voteid},
+	    		((select ifnull(max(itemid),0) from t_vot_votedetail where voteid = #{voteid}) + 1),
+	    		#{content},
+	    		0,
+	    		#{type}
+    		)
+    </insert>
+    
+    <!-- 删除一个投票项 -->
+    <delete id="deletevotedetail">
+    	delete from t_vot_votedetail where voteid = #{voteid} and itemid = #{itemid}
+    </delete>
+    
+    <!-- 根据voteid删除所有投票项 -->
+    <delete id="deleteallvotedetail">
+    	delete from t_vot_votedetail where voteid = #{voteid}
+    </delete>
+    
+    <!-- 根据voteid删除投票 -->
+    <delete id="deletevote">
+    	delete from t_vot_voteshow where voteid = #{voteid}
+    </delete>
+    
+    <!-- 根据voteid查询有哪些ip进行过投票 -->
+    <select id="queryvoterecord" resultType="com.cn.wa000.business.vote.bean.VoteIpBean">
+    	select * from T_VOT_VOTERECORD where voteid = #{voteid}
+    </select>
+    
+    <!-- 投票操作 -->
+    <update id="">
+    	
+    </update>
     
 </mapper>
