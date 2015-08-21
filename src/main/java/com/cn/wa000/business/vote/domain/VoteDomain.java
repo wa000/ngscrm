@@ -3,6 +3,7 @@ package com.cn.wa000.business.vote.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cn.wa000.business.vote.bean.VoteContentBean;
 import com.cn.wa000.business.vote.bean.VoteDetailBean;
 import com.cn.wa000.business.vote.bean.VoteMainBean;
 
@@ -59,6 +60,11 @@ public class VoteDomain
      * 类型
      */
     private String type;
+    
+    /**
+     * 投票其它内容列表
+     */
+    private List<VoteContentBean> voteContentList;
     
     // ............................................................... 构造器方法
     public List<VoteDetailBean> getVoteDetailList()
@@ -151,6 +157,16 @@ public class VoteDomain
         this.detailTypeBean = detailTypeBean;
     }
     
+    public List<VoteContentBean> getVoteContentList()
+    {
+        return voteContentList;
+    }
+
+    public void setVoteContentList(List<VoteContentBean> voteContentList)
+    {
+        this.voteContentList = voteContentList;
+    }
+
     // ................................................................. 覆盖方法
     @Override
     public String toString()
@@ -158,6 +174,8 @@ public class VoteDomain
         StringBuilder builder = new StringBuilder();
         builder.append("VoteDomain [voteDetailList=");
         builder.append(voteDetailList);
+        builder.append(", detailTypeBean=");
+        builder.append(detailTypeBean);
         builder.append(", selectId=");
         builder.append(selectId);
         builder.append(", jsonResult=");
@@ -168,9 +186,14 @@ public class VoteDomain
         builder.append(addTitle);
         builder.append(", voteId=");
         builder.append(voteId);
+        builder.append(", content=");
+        builder.append(content);
+        builder.append(", type=");
+        builder.append(type);
+        builder.append(", voteContentList=");
+        builder.append(voteContentList);
         builder.append("]");
         return builder.toString();
     }
-
     
 }

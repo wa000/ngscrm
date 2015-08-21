@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<form:form modelAttribute="domain" method="post" action="${pageContext.request.contextPath}/vote/showlist/showvoteresult" >
+<form:form modelAttribute="domain" method="post" action="${pageContext.request.contextPath}/showvote/showvoteresult" >
 <table>
 <tr>
 	<td>
@@ -29,9 +29,10 @@
 	    </ul>
 	</td>
 </tr>
+<input name="voteId" value="${domain.voteId }" hidden="true" />
 <tr>
 	<td>
-		${domain.detailTypeBean.content }<textarea name="content" ></textarea>
+		${domain.detailTypeBean.content } : <textarea name="content" ></textarea>
 	</td>
 </tr>
 <tr>

@@ -61,9 +61,50 @@
     	select * from T_VOT_VOTERECORD where voteid = #{voteid}
     </select>
     
-    <!-- 投票操作 -->
-    <update id="">
-    	
+    <!-- 投票操作,对相应的投票项加1 -->
+    <update id="updateVoteNumber">
+    	update t_vot_votedetail 
+    	set 
+	    	count = 
+	    	(
+	    	select count + 1 
+		    	from t_vot_votedetail 
+		    	where voteid = #{voteid} and itemid = #{itemid} 
+	    	)
+    	where voteid = #{voteid} and itemid = #{itemid}
     </update>
+    
+    <!-- 把文本框中的内容记录到数据库中 -->
+    <insert id="addVoteContent">
+    	insert into t_vot_votecontent (voteid, content) values (#{voteid},  #{content})
+    </insert>
+    
+    <!-- 根据voteid查询出所有的其它信息 -->
+    <select id="selectVoteContent" resultType="com.cn.wa000.business.vote.bean.VoteContentBean" >
+		select content from t_vot_votecontent where voteid = #{voteid} 
+    </select>
+    
+    <!-- 记录投过票的ip -->
+    <insert id="logIpforVote">
+    	insert into t_vot_voterecord (voteid, ip) values (#{voteid}, #{ip})
+    </insert>
+    
+    <!-- 查询出配置好的 待配对pair信息 -->
+    <select id="queryPairInfo" resultType="com.cn.wa000.business.vote.bean.PairBean">
+    	select * from t_ucp_pairinfo
+    </select>
+    
+    <!-- 插入pair -->
+    <insert id="addPair">
+    	insert into t_ucp_pairresult (id, pair, time) values (#{id} + 1, #{pair}, #{time})
+    </insert>
+    
+    <select id="selectMaxPairId" resultType="String">
+    	select ifnull(max(id), 0) from t_ucp_pairresult
+    </select>
+    
+    <select id="queryPairResultlist" resultType="com.cn.wa000.business.vote.bean.PairResultBean">
+    	select * from t_ucp_pairresult where id = (select max(id) from t_ucp_pairresult)
+    </select>
     
 </mapper>

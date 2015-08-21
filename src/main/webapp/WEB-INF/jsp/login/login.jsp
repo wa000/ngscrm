@@ -23,6 +23,7 @@
         <label>密码<input type="password" name="password"  /><span>密码为空</span></label>
         <button type="submit">管理员登入</button>
         <button type="button" onclick="showVoteList()">投票</button>
+        <button type="button" onclick="showPairresult()">pair结果</button>
     </form:form>
 </div>
 </body>
@@ -118,4 +119,10 @@ function showVoteList()
 {
 	window.location = "${pageContext.request.contextPath}/showvote/showvotepage";
 }
+
+function showPairresult()
+{
+	window.location = "${pageContext.request.contextPath}/showvote/showPairResult";
+}
+
 </script>

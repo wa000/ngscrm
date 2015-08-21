@@ -6,7 +6,7 @@
         titleAlign:'center',
         width:'500px',//一共的宽度
         speed:1000,//显示效果的时间（毫秒）
-        bgImg:'../../theme/img/vote/bg.gif',//背景
+        bgImg:'../theme/img/vote/bg.gif',//背景
         multiple:false,//是否多选
         showPoll:false,//是否显示投票
         data:'',//数据

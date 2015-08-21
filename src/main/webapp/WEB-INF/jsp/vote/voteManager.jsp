@@ -39,11 +39,20 @@
 		</tbody>
 	</table>
 	<button onclick="addVote()" >新增投票</button>
+	<br />
+	<br />
+	<br />
+	<button onclick="generatePair()" >随机生成pair</button>
 </body>
 <script type="text/javascript">
 function addVote()
 {
 	window.location = "${pageContext.request.contextPath}/vote/addvote";
+}
+
+function generatePair()
+{
+	window.location = "${pageContext.request.contextPath}/showvote/generatePair";
 }
 </script>
 </html>
