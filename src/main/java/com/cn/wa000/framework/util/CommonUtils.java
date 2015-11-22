@@ -10,6 +10,40 @@ import java.io.UnsupportedEncodingException;
  */
 public class CommonUtils
 {
+    /**
+     * 获取当前应用路径, 到classes, 后面不加/
+     * 
+     * @return
+     */
+    public static String getPath()
+    {
+        try
+        {
+            String path = CommonUtils.class.getResource ("").getFile ();
+            path = path.substring(0, path.indexOf("classes") + 7);
+            return path;
+        } 
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    
+    /**
+     * 获取当前部署的ip地址
+     * 
+     * @return
+     */
+    public static String getIp()
+    {
+        String resultHtml = HttpClientUtils.runWithGit("http://www.ip5.me/");
+        String matchOne = "<td height=\"30\"><div id=\"ip_addr\" style=\"color:#191970\">";
+        String matchTwo = "</div></td>";
+        String ip = resultHtml.split(matchOne)[1].split(matchTwo)[0];
+        
+        return ip;
+    }
     
     /**
      * 获取spring上下文中的bean对象

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<form:form modelAttribute="domain" action="${pageContext.request.contextPath}/vote/doaddvotedetail" >
-		<input name="voteId" value="${voteId }" hidden="true" />
+		<input name="voteId" value="${voteId }" hidden="true" style = "display : none;" />
 		<input name="content" title="投票内容" />
 		<select name="type" >
 			<option value="1" >单选框</option>

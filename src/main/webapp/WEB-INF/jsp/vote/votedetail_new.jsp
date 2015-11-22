@@ -29,7 +29,7 @@
 	    </ul>
 	</td>
 </tr>
-<input name="voteId" value="${domain.voteId }" hidden="true" />
+<input name="voteId" value="${domain.voteId }" hidden="true" style = "display : none;" />
 <tr>
 	<td>
 		${domain.detailTypeBean.content } : <textarea name="content" ></textarea>
